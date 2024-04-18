@@ -1,5 +1,13 @@
+import Date from '../components/date/Date';
+import List from '../components/list/List';
+
 const MainPage = () => {
-  return <div>안녕</div>;
+  return (
+    <>
+      <Date />
+      <List />
+    </>
+  );
 };
 
 export default MainPage;
