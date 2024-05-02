@@ -1,21 +1,21 @@
+import { useTodoList } from '../../hooks/useToList';
+
 const List = () => {
+  const { data: todoList = [] } = useTodoList(); // data의 값은 서버로부터 응답이 오기전까지 undefined이므로 배열로 초기화 해주자!
+
   return (
     <>
       <section>
-        <div>
-          <input type="checkbox" id="toDo" />
-          <label htmlFor="toDo">배열 메서드 정리</label>
-          <div>
-            <button>수정하기</button>
-            <button>삭제하기</button>
+        {todoList.map((todo, idx) => (
+          <div className="todo" key={idx}>
+            <input type="checkbox" id={`todo${idx}`} />
+            <label htmlFor={`todo${idx}`}>{todo.text}</label>
+            <div>
+              <button>수정하기</button>
+              <button>삭제하기</button>
+            </div>
           </div>
-          {/* 수정할때 
-          <div>
-            <button>완료하기</button>
-            <button>취소하기</button>
-          </div>
-          */}
-        </div>
+        ))}
       </section>
     </>
   );
