@@ -5,7 +5,7 @@ const List = () => {
 
   return (
     <>
-      <section>
+      <form>
         {todoList.map((todo, idx) => (
           <div className="todo" key={idx}>
             <input type="checkbox" id={`todo${idx}`} />
@@ -16,7 +16,7 @@ const List = () => {
             </div>
           </div>
         ))}
-      </section>
+      </form>
     </>
   );
 };
